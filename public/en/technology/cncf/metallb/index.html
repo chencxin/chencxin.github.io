@@ -1,0 +1,3688 @@
+<!DOCTYPE html>
+<html lang="en" class="js csstransforms3d">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="generator" content="Hugo 0.83.1" />
+    <meta name="description" content="description">
+<meta name="author" content="yinqiwei">
+
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+
+    <title>Metallb :: athena</title>
+
+    
+    <link href="/css/nucleus.css?1621338528" rel="stylesheet">
+    <link href="/css/fontawesome-all.min.css?1621338528" rel="stylesheet">
+    <link href="/css/hybrid.css?1621338528" rel="stylesheet">
+    <link href="/css/featherlight.min.css?1621338528" rel="stylesheet">
+    <link href="/css/perfect-scrollbar.min.css?1621338528" rel="stylesheet">
+    <link href="/css/auto-complete.css?1621338528" rel="stylesheet">
+    <link href="/css/atom-one-dark-reasonable.css?1621338528" rel="stylesheet">
+    <link href="/css/theme.css?1621338528" rel="stylesheet">
+    <link href="/css/hugo-theme.css?1621338528" rel="stylesheet">
+    
+    
+
+    <script src="/js/jquery-3.3.1.min.js?1621338528"></script>
+
+    <style>
+      :root #header + #content > #left > #rlblock_left{
+          display:none !important;
+      }
+      
+    </style>
+    
+  </head>
+  <body class="" data-url="/en/technology/cncf/metallb/">
+    <nav id="sidebar" class="">
+
+
+
+  <div id="header-wrapper">
+    <div id="header">
+      <a id="logo" href='/en'>
+
+<svg id="grav-logo" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+	width="100%" height="100%"  viewBox="0 0 285.1 69.9" xml:space="preserve">
+	<g id="svgGroup" stroke-linecap="round" fill-rule="evenodd" font-size="9pt" stroke="#000" stroke-width="0.25mm" fill="none" style="stroke:#000;stroke-width:0.25mm;fill:none"><path d="M 222.17 28.426 L 225.77 33.601 A 1789.851 1789.851 0 0 0 225.862 24.915 Q 225.955 13.346 225.845 5.326 Q 225.845 3.151 227.345 1.613 A 5.062 5.062 0 0 1 230.986 0.039 A 6.237 6.237 0 0 1 231.02 0.038 A 6.131 6.131 0 0 1 231.125 0.037 A 4.98 4.98 0 0 1 234.732 1.501 Q 236.27 3.001 236.345 5.176 A 525.555 525.555 0 0 1 236.356 7.446 Q 236.387 17.907 236.156 44.488 A 12363.951 12363.951 0 0 1 236.12 48.601 Q 236.045 50.701 234.62 52.163 Q 233.195 53.626 231.095 53.776 A 6.065 6.065 0 0 1 230.273 53.868 Q 227.889 53.966 226.22 51.976 A 100.127 100.127 0 0 1 222.914 47.836 Q 218.864 42.509 213.545 34.426 A 835.931 835.931 0 0 0 209.798 29.166 Q 205.336 22.958 202.775 19.704 A 77.369 77.369 0 0 0 201.77 18.451 A 858.382 858.382 0 0 0 201.813 20.113 Q 201.887 22.864 202.042 28.232 A 14161.148 14161.148 0 0 0 202.145 31.763 Q 202.445 42.076 202.445 48.901 A 5.052 5.052 0 0 1 200.955 52.565 A 6.109 6.109 0 0 1 200.907 52.613 A 5.052 5.052 0 0 1 197.262 54.15 A 6.108 6.108 0 0 1 197.195 54.151 A 5.052 5.052 0 0 1 193.53 52.661 A 6.109 6.109 0 0 1 193.482 52.613 A 5.052 5.052 0 0 1 191.945 48.968 A 6.108 6.108 0 0 1 191.945 48.901 A 323.251 323.251 0 0 0 191.919 45.092 Q 191.845 38.939 191.562 28.653 A 2281.673 2281.673 0 0 0 191.532 27.563 Q 191.144 13.698 191.387 6.173 A 125.368 125.368 0 0 1 191.42 5.251 A 5.138 5.138 0 0 1 193.063 1.581 A 6.137 6.137 0 0 1 193.07 1.576 A 4.968 4.968 0 0 1 196.614 0.147 A 5.971 5.971 0 0 1 196.82 0.151 Q 197.87 0.226 198.845 0.601 A 5.375 5.375 0 0 1 201.187 2.103 A 6.433 6.433 0 0 1 201.32 2.251 A 182.509 182.509 0 0 0 202.056 3.153 Q 203.245 4.603 205.234 6.986 A 1239.368 1239.368 0 0 0 205.445 7.238 A 2711.312 2711.312 0 0 1 206.781 8.839 Q 208.066 10.381 208.973 11.474 A 580.638 580.638 0 0 1 209.72 12.376 Q 213.885 16.69 222.035 28.235 A 438.681 438.681 0 0 1 222.17 28.426 Z M 172.313 54.136 A 1420.606 1420.606 0 0 0 178.37 54.151 A 6.266 6.266 0 0 0 178.437 54.15 A 4.988 4.988 0 0 0 182.045 52.651 A 5.096 5.096 0 0 0 183.083 51.181 A 5.194 5.194 0 0 0 183.545 48.976 A 6.266 6.266 0 0 0 183.544 48.908 A 4.988 4.988 0 0 0 182.045 45.301 A 5.096 5.096 0 0 0 180.575 44.262 A 5.194 5.194 0 0 0 178.37 43.801 A 1412.579 1412.579 0 0 1 177.874 43.8 Q 167.802 43.797 152.945 43.651 Q 153.007 40.776 152.913 34.463 A 887.968 887.968 0 0 0 152.87 31.801 Q 155.673 31.74 168.527 31.728 A 7313.764 7313.764 0 0 1 174.995 31.726 A 6.108 6.108 0 0 0 175.062 31.725 A 5.052 5.052 0 0 0 178.707 30.188 A 6.21 6.21 0 0 0 178.755 30.14 A 5.007 5.007 0 0 0 180.245 26.513 A 5.883 5.883 0 0 0 180.244 26.413 A 4.885 4.885 0 0 0 178.707 22.876 Q 177.17 21.376 174.995 21.376 A 7699.223 7699.223 0 0 0 169.939 21.377 Q 158.957 21.384 154.672 21.425 A 176.386 176.386 0 0 0 152.795 21.451 Q 152.841 17.56 152.947 14.314 A 220.702 220.702 0 0 1 153.095 10.651 A 209.897 209.897 0 0 1 153.706 10.641 Q 157.88 10.578 165.62 10.613 Q 173.945 10.651 178.145 10.651 A 6.049 6.049 0 0 0 178.297 10.649 A 4.796 4.796 0 0 0 181.782 9.113 Q 183.245 7.576 183.245 5.438 A 5.883 5.883 0 0 0 183.244 5.338 A 4.885 4.885 0 0 0 181.707 1.801 Q 180.17 0.301 177.995 0.301 A 448.423 448.423 0 0 1 175.547 0.327 Q 170.582 0.368 163.22 0.338 Q 156.245 0.31 151.421 0.345 A 466.701 466.701 0 0 0 148.445 0.376 Q 146.795 0.451 145.52 1.388 Q 144.245 2.326 143.645 3.826 A 4.944 4.944 0 0 0 143.476 4.247 A 5.45 5.45 0 0 0 143.195 5.626 A 91.378 91.378 0 0 0 143.134 6.277 Q 142.448 13.911 142.52 26.851 A 6063.378 6063.378 0 0 1 142.553 31.136 Q 142.65 44.314 142.606 47.453 A 39.472 39.472 0 0 1 142.595 48.001 Q 142.595 49.576 143.495 50.926 A 5.163 5.163 0 0 0 143.957 51.718 A 5.574 5.574 0 0 0 145.332 53.063 Q 146.57 53.926 148.07 53.926 A 4865.786 4865.786 0 0 0 156.625 54.019 Q 165.546 54.107 172.313 54.136 Z M 120.695 48.901 L 120.695 30.076 A 206.607 206.607 0 0 0 119.165 30.067 Q 111.453 30.05 97.52 30.526 Q 97.669 42.798 97.67 48.874 A 450.455 450.455 0 0 1 97.67 48.901 A 4.898 4.898 0 0 1 96.168 52.466 A 6.374 6.374 0 0 1 96.095 52.538 A 5.355 5.355 0 0 1 94.174 53.771 A 5.214 5.214 0 0 1 92.382 54.076 A 4.942 4.942 0 0 1 88.779 52.573 A 6.264 6.264 0 0 1 88.707 52.501 Q 87.17 50.926 87.17 48.751 A 209.065 209.065 0 0 0 87.183 47.213 Q 87.217 41.133 87.02 27.738 A 1038.698 1038.698 0 0 0 87.02 27.713 A 1615.96 1615.96 0 0 1 86.961 23.317 Q 86.838 13.137 86.913 7.234 A 228.39 228.39 0 0 1 86.945 5.326 A 5.111 5.111 0 0 1 87.593 2.939 A 5.237 5.237 0 0 1 88.595 1.688 A 5.172 5.172 0 0 1 92.236 0.262 A 6.286 6.286 0 0 1 92.345 0.263 Q 94.52 0.301 95.982 1.876 Q 97.445 3.451 97.445 5.626 Q 97.32 10.376 97.351 17.209 A 696.403 696.403 0 0 0 97.37 20.026 Q 112.745 19.576 120.695 19.576 A 1541.035 1541.035 0 0 1 120.705 13.715 Q 120.723 9.104 120.77 5.401 Q 120.845 3.226 122.382 1.726 A 4.98 4.98 0 0 1 125.989 0.262 A 6.131 6.131 0 0 1 126.095 0.263 A 5.153 5.153 0 0 1 128.55 0.896 A 5.307 5.307 0 0 1 129.77 1.838 Q 131.27 3.376 131.27 5.551 A 229.896 229.896 0 0 0 131.252 7.294 Q 131.198 14.725 131.195 44.679 A 36631.404 36631.404 0 0 0 131.195 48.901 A 5.052 5.052 0 0 1 129.705 52.565 A 6.109 6.109 0 0 1 129.657 52.613 A 5.052 5.052 0 0 1 126.012 54.15 A 6.108 6.108 0 0 1 125.945 54.151 A 5.052 5.052 0 0 1 122.28 52.661 A 6.109 6.109 0 0 1 122.232 52.613 A 5.052 5.052 0 0 1 120.695 48.968 A 6.108 6.108 0 0 1 120.695 48.901 Z M 64.97 48.901 Q 64.895 51.076 63.357 52.576 A 4.98 4.98 0 0 1 59.75 54.039 A 6.131 6.131 0 0 1 59.645 54.038 A 5.153 5.153 0 0 1 57.189 53.405 A 5.307 5.307 0 0 1 55.97 52.463 Q 54.47 50.926 54.47 48.751 A 30.67 30.67 0 0 0 54.481 48.248 Q 54.525 45.303 54.428 31.893 A 6476.917 6476.917 0 0 0 54.395 27.526 A 448.199 448.199 0 0 1 54.382 24.643 Q 54.376 18.289 54.565 13.367 A 169.937 169.937 0 0 1 54.695 10.576 A 800.183 800.183 0 0 0 50.458 10.586 Q 47.148 10.604 44.57 10.651 Q 42.395 10.651 40.857 9.151 A 5.062 5.062 0 0 1 39.283 5.509 A 6.237 6.237 0 0 1 39.282 5.476 A 6.131 6.131 0 0 1 39.281 5.37 A 4.98 4.98 0 0 1 40.745 1.763 Q 42.245 0.226 44.42 0.151 A 519.001 519.001 0 0 1 47.162 0.115 Q 51.351 0.071 58.274 0.044 A 3723.447 3723.447 0 0 1 59.945 0.038 A 11410.964 11410.964 0 0 1 64.965 0.022 Q 71.926 0.001 75.47 0.001 Q 77.645 0.001 79.22 1.501 A 5.113 5.113 0 0 1 80.521 3.433 A 5.125 5.125 0 0 1 80.832 5.138 Q 80.87 7.276 79.37 8.888 A 5.154 5.154 0 0 1 77.831 10.045 A 4.695 4.695 0 0 1 75.77 10.501 A 707.574 707.574 0 0 0 70.763 10.519 A 974.147 974.147 0 0 0 65.195 10.576 A 165.527 165.527 0 0 0 65.004 15.027 Q 64.853 20.013 64.889 26.595 A 495.778 495.778 0 0 0 64.895 27.451 A 6425.819 6425.819 0 0 1 64.934 32.671 Q 65.034 46.915 64.97 48.901 Z M 0.395 47.026 L 17.195 3.751 Q 17.795 2.326 19.07 1.426 Q 20.345 0.526 21.92 0.451 Q 23.57 0.151 25.182 1.013 Q 26.795 1.876 27.62 3.451 L 33.17 17.251 L 39.695 33.376 L 44.87 46.876 A 5.413 5.413 0 0 1 45.234 48.233 Q 45.388 49.44 44.935 50.634 A 5.844 5.844 0 0 1 44.832 50.888 A 5.134 5.134 0 0 1 41.939 53.688 A 6.434 6.434 0 0 1 41.907 53.701 A 5.582 5.582 0 0 1 40.494 54.068 Q 39.263 54.215 38.046 53.754 A 6.04 6.04 0 0 1 37.82 53.663 Q 35.795 52.801 34.97 50.851 L 30.62 40.951 Q 22.22 40.726 13.97 41.101 L 10.295 51.001 Q 9.395 52.951 7.37 53.813 Q 5.503 54.608 3.636 53.937 A 5.896 5.896 0 0 1 3.32 53.813 Q 1.295 52.951 0.47 51.001 A 5.505 5.505 0 0 1 0.077 49.753 Q -0.164 48.431 0.347 47.142 A 5.473 5.473 0 0 1 0.395 47.026 Z M 242.645 47.026 L 259.445 3.751 Q 260.045 2.326 261.32 1.426 Q 262.595 0.526 264.17 0.451 Q 265.82 0.151 267.432 1.013 Q 269.045 1.876 269.87 3.451 L 275.42 17.251 L 281.945 33.376 L 287.12 46.876 A 5.413 5.413 0 0 1 287.484 48.233 Q 287.638 49.44 287.185 50.634 A 5.844 5.844 0 0 1 287.082 50.888 A 5.134 5.134 0 0 1 284.189 53.688 A 6.434 6.434 0 0 1 284.157 53.701 A 5.582 5.582 0 0 1 282.744 54.068 Q 281.513 54.215 280.296 53.754 A 6.04 6.04 0 0 1 280.07 53.663 Q 278.045 52.801 277.22 50.851 L 272.87 40.951 Q 264.47 40.726 256.22 41.101 L 252.545 51.001 Q 251.645 52.951 249.62 53.813 Q 247.753 54.608 245.886 53.937 A 5.896 5.896 0 0 1 245.57 53.813 Q 243.545 52.951 242.72 51.001 A 5.505 5.505 0 0 1 242.327 49.753 Q 242.086 48.431 242.597 47.142 A 5.473 5.473 0 0 1 242.645 47.026 Z M 26.57 30.376 L 22.595 19.576 L 18.32 30.376 L 26.57 30.376 Z M 268.82 30.376 L 264.845 19.576 L 260.57 30.376 L 268.82 30.376 Z" vector-effect="non-scaling-stroke"/></g>
+</svg>
+
+</a>
+
+    </div>
+    
+        <div class="searchbox">
+    <label for="search-by"><i class="fas fa-search"></i></label>
+    <input data-search-input id="search-by" type="search" placeholder="Search...">
+    <span data-search-clear=""><i class="fas fa-times"></i></span>
+</div>
+
+<script type="text/javascript" src="/js/lunr.min.js?1621338528"></script>
+<script type="text/javascript" src="/js/auto-complete.js?1621338528"></script>
+<script type="text/javascript">
+    
+        var baseurl = "http:\/\/athena-book.dns.qihoo.net\/en";
+    
+</script>
+<script type="text/javascript" src="/js/search.js?1621338528"></script>
+
+    
+  </div>
+  
+
+    <div class="highlightable">
+    <ul class="topics">
+
+        
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/ops/" title="运维相关" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/ops/">
+          运维相关
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/ops/first/" title="First" class="dd-item ">
+        <a href="/en/ops/first/">
+        First
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/dns/" title="DNS" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/dns/">
+          DNS
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/dns/box/" title="盒子部署" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/dns/box/">
+          盒子部署
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/box/k3s-install/" title="k3s版本安装" class="dd-item ">
+        <a href="/en/dns/box/k3s-install/">
+        k3s版本安装
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/box/feature/" title="发展" class="dd-item ">
+        <a href="/en/dns/box/feature/">
+        发展
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/box/kunpeng/" title="鲲鹏" class="dd-item ">
+        <a href="/en/dns/box/kunpeng/">
+        鲲鹏
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/box/chore/" title="讨论" class="dd-item ">
+        <a href="/en/dns/box/chore/">
+        讨论
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/box/haiguang/" title="海光麒麟机器安装" class="dd-item ">
+        <a href="/en/dns/box/haiguang/">
+        海光麒麟机器安装
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/box/local-brain/" title="本脑安装" class="dd-item ">
+        <a href="/en/dns/box/local-brain/">
+        本脑安装
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/dns/product/" title="DNS产品" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/dns/product/">
+          DNS产品
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/product/future/" title="发展" class="dd-item ">
+        <a href="/en/dns/product/future/">
+        发展
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/dns/project/" title="项目" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/dns/project/">
+          项目
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/project/oauth2/" title="Oauth2" class="dd-item ">
+        <a href="/en/dns/project/oauth2/">
+        Oauth2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/project/monitoring/" title="监控报警" class="dd-item ">
+        <a href="/en/dns/project/monitoring/">
+        监控报警
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/dns/my-first-post/" title="关于" class="dd-item ">
+        <a href="/en/dns/my-first-post/">
+        关于
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/" title="技术" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/en/technology/">
+          技术
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/cncf/" title="云原生" class="dd-item
+        parent
+        
+        
+        ">
+      <a href="/en/technology/cncf/">
+          云原生
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/cncf/k8s/" title="K8S" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/technology/cncf/k8s/">
+          K8S
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/cncf/k8s/private-registry/" title="私有镜像仓库" class="dd-item ">
+        <a href="/en/technology/cncf/k8s/private-registry/">
+        私有镜像仓库
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/cncf/project-list/" title="项目列表" class="dd-item ">
+        <a href="/en/technology/cncf/project-list/">
+        项目列表
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/cncf/usage/" title="使用" class="dd-item ">
+        <a href="/en/technology/cncf/usage/">
+        使用
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/cncf/metallb/" title="Metallb" class="dd-item active">
+        <a href="/en/technology/cncf/metallb/">
+        Metallb
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/cncf/calico-bgp/" title="Calico bgp" class="dd-item ">
+        <a href="/en/technology/cncf/calico-bgp/">
+        Calico bgp
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/centos/" title="centos系统" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/technology/centos/">
+          centos系统
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/centos/comps/" title="Comps" class="dd-item ">
+        <a href="/en/technology/centos/comps/">
+        Comps
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/centos/rpmbuild/" title="Rpmbuild" class="dd-item ">
+        <a href="/en/technology/centos/rpmbuild/">
+        Rpmbuild
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/centos/kickstart/" title="Kickstart" class="dd-item ">
+        <a href="/en/technology/centos/kickstart/">
+        Kickstart
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/centos/custom-centos-iso/" title="自定义centos镜像" class="dd-item ">
+        <a href="/en/technology/centos/custom-centos-iso/">
+        自定义centos镜像
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/ubuntu/" title="Ubuntu" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/technology/ubuntu/">
+          Ubuntu
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/ubuntu/virtual-window/" title="虚拟桌面" class="dd-item ">
+        <a href="/en/technology/ubuntu/virtual-window/">
+        虚拟桌面
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/ubuntu/share-screen/" title="共享桌面" class="dd-item ">
+        <a href="/en/technology/ubuntu/share-screen/">
+        共享桌面
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/system/system-clone/" title="System Clone" class="dd-item ">
+        <a href="/en/technology/system/system-clone/">
+        System Clone
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/other/docker-x86-arm64/" title="x86上运行arm64" class="dd-item ">
+        <a href="/en/technology/other/docker-x86-arm64/">
+        x86上运行arm64
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/dev/" title="开发" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/technology/dev/">
+          开发
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/dev/go-mod/" title="Go Mod" class="dd-item ">
+        <a href="/en/technology/dev/go-mod/">
+        Go Mod
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/technology/app/" title="应用技术" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/technology/app/">
+          应用技术
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/oauto2/" title="Oauto2" class="dd-item ">
+        <a href="/en/technology/app/oauto2/">
+        Oauto2
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/oidc/" title="openid connect" class="dd-item ">
+        <a href="/en/technology/app/oidc/">
+        openid connect
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/hydra/" title="Hydra" class="dd-item ">
+        <a href="/en/technology/app/hydra/">
+        Hydra
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/dex/" title="Dex" class="dd-item ">
+        <a href="/en/technology/app/dex/">
+        Dex
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/gns3/" title="Gns3" class="dd-item ">
+        <a href="/en/technology/app/gns3/">
+        Gns3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/quagga/" title="Quagga" class="dd-item ">
+        <a href="/en/technology/app/quagga/">
+        Quagga
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/keepalived/" title="Keepalived" class="dd-item ">
+        <a href="/en/technology/app/keepalived/">
+        Keepalived
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/technology/app/oauth-client-demo/" title="Oauth Client示例" class="dd-item ">
+        <a href="/en/technology/app/oauth-client-demo/">
+        Oauth Client示例
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/private/" title="私密" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/private/">
+          私密
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/" title="示例" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/">
+          示例
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/basics/" title="Basics" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/basics/">
+          <b>1. </b>Basics
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/basics/requirements/" title="Requirements" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/basics/requirements/">
+          Requirements
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/basics/installation/" title="Installation" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/basics/installation/">
+          Installation
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/basics/configuration/" title="Configuration" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/basics/configuration/">
+          Configuration
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/basics/style-customization/" title="Style customization" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/basics/style-customization/">
+          Style customization
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/" title="Shortcodes" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/">
+          <b>3. </b>Shortcodes
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/attachments/" title="Attachments" class="dd-item ">
+        <a href="/en/example/shortcodes/attachments/">
+        Attachments
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/attachments.fr/" title="Attachments (Pièces jointes)" class="dd-item ">
+        <a href="/en/example/shortcodes/attachments.fr/">
+        Attachments (Pièces jointes)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/button/" title="Button" class="dd-item ">
+        <a href="/en/example/shortcodes/button/">
+        Button
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/button.fr/" title="Button (Bouton)" class="dd-item ">
+        <a href="/en/example/shortcodes/button.fr/">
+        Button (Bouton)
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/" title="Children" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/">
+          Children
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-1/" title="page 1" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-1/">
+          page 1
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-1/children-1-1/" title="page 1-1" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-1/children-1-1/">
+          page 1-1
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-1/children-1-1/children-1-1-1/" title="page 1-1-1" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-1/children-1-1/children-1-1-1/">
+          page 1-1-1
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/" title="page 1-1-1-1" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/">
+          page 1-1-1-1
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+            
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/" title="page 1-1-1-1-1" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-1/children-1-1/children-1-1-1/children-1-1-1-1/children-1-1-1-1-1/">
+          page 1-1-1-1-1
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-2/" title="page 2" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-2/">
+          page 2
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/children/children-2/test3/" title="page test 3" class="dd-item ">
+        <a href="/en/example/shortcodes/children/children-2/test3/">
+        page test 3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/children/children-2/test3.fr/" title="page test 3" class="dd-item ">
+        <a href="/en/example/shortcodes/children/children-2/test3.fr/">
+        page test 3
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/example/shortcodes/children/children-3/" title="page 3" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/example/shortcodes/children/children-3/">
+          page 3
+          
+      </a>
+      
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/children/test/" title="page test" class="dd-item ">
+        <a href="/en/example/shortcodes/children/test/">
+        page test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/children/test.fr/" title="page test" class="dd-item ">
+        <a href="/en/example/shortcodes/children/test.fr/">
+        page test
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/expand/" title="Expand" class="dd-item ">
+        <a href="/en/example/shortcodes/expand/">
+        Expand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/expand.fr/" title="Expand" class="dd-item ">
+        <a href="/en/example/shortcodes/expand.fr/">
+        Expand
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/mermaid/" title="Mermaid" class="dd-item ">
+        <a href="/en/example/shortcodes/mermaid/">
+        Mermaid
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/mermaid.fr/" title="Mermaid" class="dd-item ">
+        <a href="/en/example/shortcodes/mermaid.fr/">
+        Mermaid
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/notice/" title="Notice" class="dd-item ">
+        <a href="/en/example/shortcodes/notice/">
+        Notice
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/notice.fr/" title="Notice" class="dd-item ">
+        <a href="/en/example/shortcodes/notice.fr/">
+        Notice
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/siteparam/" title="Site param" class="dd-item ">
+        <a href="/en/example/shortcodes/siteparam/">
+        Site param
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/example/shortcodes/siteparam.fr/" title="Site param" class="dd-item ">
+        <a href="/en/example/shortcodes/siteparam.fr/">
+        Site param
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+          
+
+
+
+
+ 
+  
+    
+    <li data-nav-id="/en/about/" title="关于" class="dd-item
+        
+        
+        
+        ">
+      <a href="/en/about/">
+          关于
+          
+      </a>
+      
+      
+        <ul>
+          
+          
+          
+
+        
+          
+            
+            
+
+
+
+
+ 
+  
+    
+      <li data-nav-id="/en/about/first/" title="First" class="dd-item ">
+        <a href="/en/about/first/">
+        First
+        
+        </a>
+    </li>
+     
+  
+ 
+
+            
+          
+        
+        </ul>
+      
+    </li>
+  
+ 
+
+          
+        
+    </ul>
+
+    
+    
+
+    
+    <section id="prefooter">
+      <hr/>
+      <ul>
+      
+        <li>
+          <a class="padding">
+            <i class="fas fa-language fa-fw"></i>
+          <div class="select-style">
+            <select id="select-language" onchange="location = this.value;">
+          
+          
+          
+              
+              
+                  
+              
+                  
+                    
+                    
+                      <option id="en" value="http://athena-book.dns.qihoo.net/en/technology/cncf/metallb/" selected>English</option>
+                    
+                  
+              
+          
+        </select>
+        <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          width="255px" height="255px" viewBox="0 0 255 255" style="enable-background:new 0 0 255 255;" xml:space="preserve">
+          <g>
+            <g id="arrow-drop-down">
+              <polygon points="0,63.75 127.5,191.25 255,63.75 		" />
+            </g>
+          </g>
+        </svg>
+        </div>
+        </a>
+        </li>
+      
+
+      
+      </ul>
+    </section>
+    
+    <section id="footer">
+      <center>
+    
+    <a class="github-button" href="https://w.src.corp.qihoo.net/dns/athena-book" data-icon="octicon-cloud-download" aria-label="Download matcornic/hugo-theme-learn on GitHub">Download</a>
+
+    
+    <a class="github-button" href="https://w.src.corp.qihoo.net/dns/athena-book" data-icon="octicon-star" data-show-count="true" aria-label="Star matcornic/hugo-theme-learn on GitHub">Star</a>
+
+    
+    <a class="github-button" href="https://w.src.corp.qihoo.net/dns/athena-book/fork" data-icon="octicon-repo-forked" data-show-count="true" aria-label="Fork matcornic/hugo-theme-learn on GitHub">Fork</a>
+
+    <p>Built with <a href="https://github.com/matcornic/hugo-theme-learn"><i class="fas fa-heart"></i></a> <a href="https://gohugo.io/">Hugo</a> From yinqiwei@360.cn</p>
+</center>
+
+<script async defer src="https://buttons.github.io/buttons.js"></script>
+
+    </section>
+  </div>
+</nav>
+
+
+
+
+        <section id="body">
+        <div id="overlay"></div>
+        <div class="padding highlightable">
+              
+              <div>
+                <div id="top-bar">
+                
+                  
+                  
+                  
+                  <div id="top-github-link">
+                    <a class="github-link" title='Edit this page' href="https://w.src.corp.qihoo.net/dns/athena-book/tree/master/content/technology/cncf/metallb.md" target="blank">
+                      <i class="fas fa-code-branch"></i>
+                      <span id="top-github-link-text">Edit this page</span>
+                    </a>
+                  </div>
+                  
+                
+                
+                <div id="breadcrumbs" itemscope="" itemtype="http://data-vocabulary.org/Breadcrumb">
+                    <span id="sidebar-toggle-span">
+                        <a href="#" id="sidebar-toggle" data-sidebar-toggle="">
+                          <i class="fas fa-bars"></i>
+                        </a>
+                    </span>
+                  
+                  <span id="toc-menu"><i class="fas fa-list-alt"></i></span>
+                  
+                  <span class="links">
+                 
+                 
+                    
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            
+            
+          
+          
+            <a href='/en/'>athena</a> > <a href='/en/technology/'>技术</a> > <a href='/en/technology/cncf/'>云原生</a> > Metallb
+          
+        
+          
+        
+          
+        
+          
+        
+                 
+                  </span>
+                </div>
+                
+                    <div class="progress">
+    <div class="wrapper">
+<nav id="TableOfContents"></nav>
+    </div>
+</div>
+
+                
+              </div>
+            </div>
+            
+        <div id="head-tags">
+        
+        </div>
+        
+        <div id="body-inner">
+          
+            <h1>
+              
+              Metallb
+            </h1>
+          
+
+        
+
+
+<h1 id="基本信息">基本信息</h1>
+<p><a href="https://metallb.universe.tf/concepts/">https://metallb.universe.tf/concepts/</a></p>
+<p>MetalLB hooks into your Kubernetes cluster, and provides a network load-balancer implementation.</p>
+<h1 id="安装">安装</h1>
+<p>1、ipvs模式配置修改：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl edit configmap -n kube-system kube-proxy
+</code></pre></div><div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-yaml" data-lang="yaml"><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">kubeproxy.config.k8s.io/v1alpha1</span>
+<span style="color:#f92672">kind</span>: <span style="color:#ae81ff">KubeProxyConfiguration</span>
+<span style="color:#f92672">mode</span>: <span style="color:#e6db74">&#34;ipvs&#34;</span>
+<span style="color:#f92672">ipvs</span>:
+  <span style="color:#f92672">strictARP</span>: <span style="color:#66d9ef">true</span>
+</code></pre></div><p>2、安装</p>
+<p>需要文件：</p>
+<ul>
+<li>namespace.yaml</li>
+<li>metallb.yaml</li>
+<li>secret.yaml</li>
+</ul>
+<p>其中namespace.yaml 和 metallb.yaml可以在github上找到</p>
+<p><a href="https://github.com/metallb/metallb/tree/main/manifests">https://github.com/metallb/metallb/tree/main/manifests</a></p>
+<p>secret.yaml需要自己创建</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.6/manifests/namespace.yaml
+kubectl apply -f https://raw.githubusercontent.com/metallb/metallb/v0.9.6/manifests/metallb.yaml
+<span style="color:#75715e"># On first install only</span>
+kubectl create secret generic -n metallb-system memberlist --from-literal<span style="color:#f92672">=</span>secretkey<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;</span><span style="color:#66d9ef">$(</span>openssl rand -base64 128<span style="color:#66d9ef">)</span><span style="color:#e6db74">&#34;</span>
+</code></pre></div><p>注意：</p>
+<p>calico 和 matallb中的<code>speaker</code>冲突，修改文件</p>
+<p>1、node asnumber,routeReflectorClusterID</p>
+<p>2、</p>
+
+
+<footer class="footline">
+	
+</footer>
+
+        
+        </div>
+        
+
+      </div>
+
+    <div id="navigation">
+        
+        
+
+        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                        
+                        
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                        
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+                        
+            
+            
+                
+                    
+                
+                
+
+                    
+                    
+                    
+
+                    
+            
+        
+                    
+            
+        
+                    
+            
+        
+
+        
+
+
+	 
+	 
+		
+			<a class="nav nav-prev" href="/en/technology/cncf/usage/" title="使用"> <i class="fa fa-chevron-left"></i></a>
+		
+		
+			<a class="nav nav-next" href="/en/technology/cncf/calico-bgp/" title="Calico bgp" style="margin-right: 0px;"><i class="fa fa-chevron-right"></i></a>
+		
+	
+    </div>
+
+    </section>
+
+    <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
+      <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
+    </div>
+    <script src="/js/clipboard.min.js?1621338528"></script>
+    <script src="/js/perfect-scrollbar.min.js?1621338528"></script>
+    <script src="/js/perfect-scrollbar.jquery.min.js?1621338528"></script>
+    <script src="/js/jquery.sticky.js?1621338528"></script>
+    <script src="/js/featherlight.min.js?1621338528"></script>
+    <script src="/js/highlight.pack.js?1621338528"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+    <script src="/js/modernizr.custom-3.6.0.js?1621338528"></script>
+    <script src="/js/learn.js?1621338528"></script>
+    <script src="/js/hugo-learn.js?1621338528"></script>
+    
+        
+            <script src="/mermaid/mermaid.js?1621338528"></script>
+        
+        <script>
+            mermaid.initialize({ startOnLoad: true });
+        </script>
+    
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-105947713-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+  </body>
+</html>
+

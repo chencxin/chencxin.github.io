@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>应用技术 on athena</title>
+    <link>http://athena-book.dns.qihoo.net/en/technology/app/</link>
+    <description>Recent content in 应用技术 on athena</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Wed, 03 Mar 2021 14:51:08 +0800</lastBuildDate><atom:link href="http://athena-book.dns.qihoo.net/en/technology/app/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Oauto2</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/oauto2/</link>
+      <pubDate>Wed, 03 Mar 2021 14:51:50 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/oauto2/</guid>
+      <description>一、是什么 OAuth（开放授权）是一个开放标准（框架），允许用户授权第三方移动应用访问他们存储在另外的服务提供者上的信息，而不需要将用户名和密码提供给第三方移动应用或分享他们数据的所有内容
+用于第三方应用授权登录
+二、授权流程  开发者注册 oauth2.0 客户端，或得客户端id和客户端秘钥 应用前端要求用户提供授权信息用来访问用户的数据； 用户被重定向到授权登录服务； 授权登录服务通过后，授权服务将授权后的token,重定向到前端服务； 应用收到token后，通过token请求用户数据，完成验证；  三、授权方式  授权码（authorization-code） 隐藏式（implicit） 密码式（password）： 客户端凭证（client credentials）  1、授权码 授权码（authorization code）方式，指的是第三方应用先申请一个授权码，然后再用该码获取令牌。
+用于前后端分离
+2、隐藏式 允许直接向前端颁发令牌。这种方式没有授权码这个中间步骤，所以称为（授权码）&amp;ldquo;隐藏式&amp;rdquo;（implicit）
+用于单前端应用
+3、密码式 如果你高度信任某个应用，RFC 6749 也允许用户把用户名和密码，直接告诉该应用。该应用就使用你的密码，申请令牌，这种方式称为&amp;quot;密码式&amp;quot;（password）
+4、凭证式 适用于没有前端的命令行应用，即在命令行下请求令牌
+三、重要概念 1、 OAuth 2.0 Scope
+客户端请求授权中有一个scope字段，用来做Internal access control (RBAC, ACL, etc) 内部访问控制。用来限制此次授权，客户端可以访问的资源。
+2、OAuth 2.0 Refresh Tokens
+请求参数response_type=code，用于更新token
+四、详细 请求授权码：
+GET /authorize?response_type=code&amp;amp;client_id=s6BhdRkqt3&amp;amp;state=xyz &amp;amp;redirect_uri=https%3A%2F%2Fclient%2Eexample%2Ecom%2Fcb HTTP/1.1 Host: server.example.com  response_type：表示授权类型，必选项，code/ token / password / client_id：表示客户端的ID，必选项 redirect_uri：表示重定向URI，可选项 scope：表示申请的权限范围，可选项 state：表示客户端的当前状态，可以指定任意值，认证服务器会原封不动地返回这个值。  用授权码获取token：</description>
+    </item>
+    
+    <item>
+      <title>openid connect</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/oidc/</link>
+      <pubDate>Thu, 04 Mar 2021 09:46:26 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/oidc/</guid>
+      <description>一、是什么？ OIDC=(Identity, Authentication) + OAuth 2.0。它在OAuth2上构建了一个身份层，是一个基于OAuth2协议的身份认证标准协议。
+解决认证问题。
+OIDC在OAuth2的access_token的基础上增加了身份认证信息， 通过公钥私钥配合校验获取身份等其他信息—– 即idToken
+二、原理 1、术语：  EU：End User：一个人类用户。 RP：Relying Party ,用来代指OAuth2中的受信任的客户端，身份认证和授权信息的消费方； OP：OpenID Provider，有能力提供EU认证的服务（比如OAuth2中的授权服务），用来为RP提供EU的身份认证信息； ID Token：JWT格式的数据，包含EU身份认证的信息。 UserInfo Endpoint：用户信息接口（受OAuth2保护），当RP使用Access Token访问时，返回授权用户的信息，此接口必须使用HTTPS。 返回EU的Claims。  2、ID Token ID Token是一个安全令牌，是一个授权服务器提供的包含用户信息（由一组Cliams构成以及其他辅助的Cliams）的JWT格式的数据结构。ID Token的主要构成部分如下（使用OAuth2流程的OIDC）
+ iss = Issuer Identifier：必须。提供认证信息者的唯一标识。一般是一个https的url（不包含querystring和fragment部分）。 sub = Subject Identifier：必须。iss提供的EU的标识，在iss范围内唯一。它会被RP用来标识唯一的用户。最长为255个ASCII个字符。 aud = Audience(s)：必须。标识ID Token的受众。必须包含OAuth2的client_id。 exp = Expiration time：必须。过期时间，超过此时间的ID Token会作废不再被验证通过。 iat = Issued At Time：必须。JWT的构建的时间。 auth_time = AuthenticationTime：EU完成认证的时间。如果RP发送AuthN请求的时候携带max_age的参数，则此Claim是必须的。 nonce：RP发送请求的时候提供的随机字符串，用来减缓重放攻击，也可以来关联ID Token和RP本身的Session信息。 acr = Authentication Context Class Reference：可选。表示一个认证上下文引用值，可以用来标识认证上下文类。 amr = Authentication Methods References：可选。表示一组认证方法。 azp = Authorized party：可选。结合aud使用。只有在被认证的一方和受众（aud）不一致时才使用此值，一般情况下很少使用。  3、认证方式 因为OIDC基于OAuth2，所以OIDC的认证流程主要是由OAuth2的几种授权流程延伸而来的，有以下3种：</description>
+    </item>
+    
+    <item>
+      <title>Hydra</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/hydra/</link>
+      <pubDate>Thu, 04 Mar 2021 14:55:49 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/hydra/</guid>
+      <description>一、示例 1、下载代码 git clone https://github.com/ory/hydra.git 2、启动服务： docker-compose -f quickstart.yml \  -f quickstart-postgres.yml \  up --build 端口 4444用于公网，4445用于管理口，一般用于内网，或者配有权限控制的代理
+3、测试服务已正确启动 不想测试也可跳过
+初始化一个oauth2 client，给的id，secre,和工作类型
+docker-compose -f quickstart.yml exec hydra \  hydra clients create \  --endpoint http://127.0.0.1:4445/ \  --id my-client \  --secret secret \  -g client_credentials 测试获取token
+docker-compose -f quickstart.yml exec hydra \  hydra token client \  --endpoint http://127.0.0.1:4444/ \  --client-id my-client \  --client-secret secret 测试使用token获取信息，token使用上面命令返回的token</description>
+    </item>
+    
+    <item>
+      <title>Dex</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/dex/</link>
+      <pubDate>Thu, 04 Mar 2021 16:50:29 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/dex/</guid>
+      <description>1、what? Dex is an identity service that uses OpenID Connect to drive authentication for other apps.
+A Federated OpenID Connect Provider
+联邦oidc
+2、how? 3、use 安装
+git clone https://github.com/dexidp/dex.git cd dex/ make 启动服务：
+./bin/dex serve examples/config-dev.yaml 配置文件示例：
+# DEPRECATED: use config.yaml.dist and config.dev.yaml examples in the repository root. # TODO: keep this until all references are updated. # The base path of dex and the external name of the OpenID Connect service.</description>
+    </item>
+    
+    <item>
+      <title>Gns3</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/gns3/</link>
+      <pubDate>Mon, 22 Mar 2021 16:53:33 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/gns3/</guid>
+      <description>GNS3 </description>
+    </item>
+    
+    <item>
+      <title>Quagga</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/quagga/</link>
+      <pubDate>Mon, 22 Mar 2021 09:48:25 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/quagga/</guid>
+      <description>简介 路由器
+Quagga软件原名是Zebra是由一个日本开发团队编写的一个以GNU版权方式发布的软件。可以使用Quagga将linux机器打造成一台功能完备的路由器。
+特性：
+模块化设计：Quagga基于模块化方案的设计，即对每一个路由协议使用单独的守护进程。 运行速度快：因为使用了模块化的设计，使得Quagga的运行速度比一般的路由选择程序要快。 可靠性高：在所有软件模块都失败的情况下，路由器可以继续保持连接并且daemons也会继续运行。故障诊断不必离线的状态下被诊断和更正
+组成 Quagga运行时要运行多个守护进程，包括ripd ripngd ospfd ospf6d bgpd 和Zebra。
+Zebra守护进程用来更新内核的路由表，其他的守护进程负责进行相应路由选择协议的路由更新。
+安装 略
+运行 # 帮助 zebra -h # 启动 zebra -d 查看服务端口，可以看到各种协议所对应的接口
+cat /etc/service 运行其他守护进程
+(ospfd|bgpd|ripd) -d 操作 登陆zebra tty
+telnet 127.1 2601 // 默认密码：zebra  登录zebra后就可以使用zebra的命令进行操作。登录其他的守护进程，都是通过它的端口登录的。 也可以直接执行 vtysh 进行配置。 selinux会影响zebra运行，关闭掉 启用IPv4转发功能 do write (保存协议配置命令到conf文件中）  telnet localhost 2601 ...(密码zebra) # 进入特权模式 Router&amp;gt; enable # 输入一个问号，看看Quagga提供了多少路由命令： Router# ? # 察看一下当前的配置 Router# show running-config # 进入全局模式，尽可能把实际可用的配置命令都实验一遍： Router# configure terminal 路由配置 bgp配置：</description>
+    </item>
+    
+    <item>
+      <title>Keepalived</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/keepalived/</link>
+      <pubDate>Fri, 19 Mar 2021 18:40:44 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/keepalived/</guid>
+      <description>安装
+yum install -y keepalived systemctl status keepalived 配置文件：
+vim /etc/keepalived/keepalived.conf 机器1 master 配置：
+vrrp_instance VI_1 { state MASTER interface eth1 virtual_router_id 51 priority 255 advert_int 1 authentication { auth_type PASS auth_pass 12345 } virtual_ipaddress { 192.168.122.200/24 } } 机器2 backup配置：
+vrrp_instance VI_1 { state BACKUP interface eth1 virtual_router_id 51 priority 254 advert_int 1 authentication { auth_type PASS auth_pass 12345 } virtual_ipaddress { 192.168.122.200/24 } } 查看ip状态：
+ip -brief address show </description>
+    </item>
+    
+    <item>
+      <title>Oauth Client示例</title>
+      <link>http://athena-book.dns.qihoo.net/en/technology/app/oauth-client-demo/</link>
+      <pubDate>Mon, 08 Mar 2021 15:56:44 +0800</pubDate>
+      
+      <guid>http://athena-book.dns.qihoo.net/en/technology/app/oauth-client-demo/</guid>
+      <description>一、示例 项目地址 github有公共的oauth登陆接口，只需要申请 git clone git@github.com:ruanyf/node-oauth-demo.git cd node-oauth-demo npm install node index.js 打开地址 http://localhost:8080 </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,19 @@
+{{ partial "header.html" . }}
+<span id="sidebar-toggle-span">
+<a href="#" id="sidebar-toggle" data-sidebar-toggle=""><i class="fas fa-bars"></i> navigation</a>
+</span>
+
+{{if .Site.Home.Content }} 
+{{.Site.Home.Content}}	
+{{else}}           
+		<h1>Athena Book</h1>
+		<p>
+			这里收集了一些文档，可能会有帮助
+		  </p>
+		  <ul>
+			  <li><b>1. 部署相关</b> </li>
+			  <li><b>2. 项目相关</b> </li>
+			<li><b>3. 开源技术相关</b> </li>
+		  </ul>
+{{ end }}  
+{{ partial "footer.html" . }}
